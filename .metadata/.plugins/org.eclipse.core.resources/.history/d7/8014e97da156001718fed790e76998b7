@@ -1,0 +1,44 @@
+package com.customer.controller;
+
+import java.util.List;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.customer.model.Customer;
+import com.customer.repository.CustomerRepository;
+
+@RestController
+public class CustomerController {
+	
+	@Autowired
+	private CustomerRepository customerRepository;
+	
+	@RequestMapping(path="/customer/all",method=RequestMethod.GET)
+	public List<Customer> getAllCustomer(){
+		
+		return (List<Customer>) customerRepository.findAll();
+	}
+	
+	@RequestMapping(path="/customer/{customerId}",method=RequestMethod.GET)
+	public Customer getCustomerById(@PathVariable(name="customerId")int customerId){
+		
+		Customer cust= customerRepository.findOne(customerId);
+		
+		return cust;
+	}
+	
+	@RequestMapping(path="/customer/add",method=RequestMethod.POST)
+	public void saveCustomer(Customer cust){
+		
+		customerRepository.save(cust);
+		
+	}
+	
+	
+	
+
+}

@@ -1,0 +1,4 @@
+Wed Jun 21 2017 08:39:50 PM - CloudFoundryServer.modifyModules(...): add: { Customer [org.eclipse.cft.server.core.StandAloneModuleFactory:Customer/cloudfoundry.standalone.app]} remove: {}
+Wed Jun 21 2017 08:40:05 PM - CloudFoundryServer.modifyModules(...): add: {} remove: { CustomerManagement [:external:CustomerManagement/org.eclipse.cft.server.core.CloudFoundryApplicationModule]}
+Wed Jun 21 2017 08:40:05 PM - ClientRequestFactory.deleteApplication(...): appName:CustomerManagement
+Wed Jun 21 2017 08:40:06 PM - CloudFoundryServerBehaviour.publishModule(...): ADDED { Customer [org.eclipse.cft.server.core.StandAloneModuleFactory:Customer/cloudfoundry.standalone.app]}
